@@ -1,8 +1,74 @@
 object frmMain: TfrmMain
   Left = 350
-  Height = 240
+  Height = 798
   Top = 250
   Width = 1024
-  Caption = 'frmMain'
-  LCLVersion = '4.0.0.4'
+  Caption = 'LZBasePlayer'
+  ClientHeight = 798
+  ClientWidth = 1024
+  object DSScreen: TDSVideoWindowEx2
+    Left = 0
+    Height = 768
+    Top = 0
+    Width = 1024
+    AspectRatio = rmLetterBox
+    AutoHideCursor = 0
+    DigitalZoom = 0
+    ColorControl.Brightness = 750
+    ColorControl.Contrast = 10000
+    ColorControl.Hue = 0
+    ColorControl.Saturation = 10000
+    ColorControl.Sharpness = 5
+    ColorControl.Gamma = 1
+    ColorControl.ColorEnable = True
+    NoScreenSaver = False
+    Color = clBlack
+    Align = alClient
+  end
+  object paButton: TPanel
+    Left = 0
+    Height = 30
+    Top = 768
+    Width = 1024
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 30
+    ClientWidth = 1024
+    TabOrder = 1
+    object lblCur: TLabel
+      Left = 0
+      Height = 30
+      Top = 0
+      Width = 50
+      Align = alLeft
+      Alignment = taCenter
+      AutoSize = False
+      Layout = tlCenter
+    end
+    object lblTotal: TLabel
+      Left = 974
+      Height = 30
+      Top = 0
+      Width = 50
+      Align = alRight
+      Alignment = taCenter
+      AutoSize = False
+      Layout = tlCenter
+    end
+    object DSTrackBar1: TDSTrackBar
+      Left = 50
+      Height = 30
+      Top = 0
+      Width = 924
+      Position = 0
+      Align = alClient
+      TabOrder = 0
+    end
+  end
+  object FilterGraph1: TFilterGraph
+    GraphEdit = False
+    LinearVolume = True
+    Left = 10
+    Top = 10
+  end
 end
