@@ -6,6 +6,9 @@ object frmMain: TfrmMain
   Caption = 'LZBasePlayer'
   ClientHeight = 798
   ClientWidth = 1024
+  LCLVersion = '4.0.0.4'
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
   object DSScreen: TDSVideoWindowEx2
     Left = 0
     Height = 768
@@ -23,6 +26,7 @@ object frmMain: TfrmMain
     ColorControl.ColorEnable = True
     NoScreenSaver = False
     Color = clBlack
+    PopupMenu = PopupMenu1
     Align = alClient
   end
   object paButton: TPanel
@@ -68,7 +72,19 @@ object frmMain: TfrmMain
   object FilterGraph1: TFilterGraph
     GraphEdit = False
     LinearVolume = True
-    Left = 10
-    Top = 10
+    Left = 80
+    Top = 80
+  end
+  object OpenDialog: TOpenDialog
+    Left = 144
+    Top = 80
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 144
+    Top = 144
+    object MenuOpen: TMenuItem
+      Caption = 'MenuOpen'
+      OnClick = MenuOpenClick
+    end
   end
 end
