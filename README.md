@@ -1,5 +1,7 @@
 Author: Ray Cho (skshpapa80@gmail.com)
+
 Name : DirectShow Movie Player
+
 Blog : https://www.raycho12.pe.kr
 
 * Lazarus 기반에서 작성되었으며 DirectShow을 사용하여
