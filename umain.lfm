@@ -6,30 +6,11 @@ object frmMain: TfrmMain
   Caption = 'LZBasePlayer'
   ClientHeight = 798
   ClientWidth = 1024
-  LCLVersion = '4.0.0.4'
+  OnClose = FormClose
   OnKeyDown = FormKeyDown
+  OnResize = FormResize
   OnShow = FormShow
-  object DSScreen: TDSVideoWindowEx2
-    Left = 0
-    Height = 768
-    Top = 0
-    Width = 1024
-    AspectRatio = rmLetterBox
-    AutoHideCursor = 0
-    DigitalZoom = 0
-    ColorControl.Brightness = 750
-    ColorControl.Contrast = 10000
-    ColorControl.Hue = 0
-    ColorControl.Saturation = 10000
-    ColorControl.Sharpness = 5
-    ColorControl.Gamma = 1
-    ColorControl.ColorEnable = True
-    NoScreenSaver = False
-    Color = clBlack
-    PopupMenu = PopupMenu1
-    Align = alClient
-  end
-  object paButton: TPanel
+  object paBottom: TPanel
     Left = 0
     Height = 30
     Top = 768
@@ -38,53 +19,78 @@ object frmMain: TfrmMain
     BevelOuter = bvNone
     ClientHeight = 30
     ClientWidth = 1024
-    TabOrder = 1
-    object lblCur: TLabel
+    TabOrder = 0
+    object lblCurTime: TLabel
       Left = 0
       Height = 30
       Top = 0
-      Width = 50
+      Width = 80
       Align = alLeft
       Alignment = taCenter
       AutoSize = False
       Layout = tlCenter
     end
     object lblTotal: TLabel
-      Left = 974
+      Left = 944
       Height = 30
       Top = 0
-      Width = 50
+      Width = 80
       Align = alRight
       Alignment = taCenter
       AutoSize = False
       Layout = tlCenter
     end
-    object DSTrackBar1: TDSTrackBar
-      Left = 50
+    object TrackBar1: TTrackBar
+      Left = 80
       Height = 30
       Top = 0
-      Width = 924
+      Width = 864
       Position = 0
+      TabStop = False
+      OnChange = TrackBar1Change
       Align = alClient
       TabOrder = 0
     end
   end
-  object FilterGraph1: TFilterGraph
-    GraphEdit = False
-    LinearVolume = True
-    Left = 80
-    Top = 80
+  object paScreen: TPanel
+    Left = 0
+    Height = 768
+    Top = 0
+    Width = 1024
+    Align = alClient
+    BevelOuter = bvNone
+    Color = clBackground
+    ParentBackground = False
+    ParentColor = False
+    PopupMenu = PopupMenu1
+    TabOrder = 1
+    OnDblClick = paScreenDblClick
   end
-  object OpenDialog: TOpenDialog
-    Left = 144
-    Top = 80
+  object Timer1: TTimer
+    OnTimer = Timer1Timer
+    Left = 256
+    Top = 136
   end
   object PopupMenu1: TPopupMenu
-    Left = 144
-    Top = 144
-    object MenuOpen: TMenuItem
-      Caption = 'MenuOpen'
-      OnClick = MenuOpenClick
+    Left = 460
+    Top = 340
+    object mnuFileOpen: TMenuItem
+      Caption = 'FileOpen'
+      OnClick = mnuFileOpenClick
+    end
+    object Separator1: TMenuItem
+      Caption = '-'
+    end
+    object mnuReserveRatio: TMenuItem
+      Caption = 'ReserveRatio'
+      OnClick = mnuReserveRatioClick
+    end
+    object mnuFullScreen: TMenuItem
+      Caption = 'FullScreen'
+      OnClick = mnuFullScreenClick
+    end
+    object Separator2: TMenuItem
+      Caption = '-'
     end
   end
 end
